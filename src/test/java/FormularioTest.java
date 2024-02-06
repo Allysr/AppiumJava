@@ -3,6 +3,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -10,7 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class FormularioTeste {
+public class FormularioTest {
 
     AndroidDriver driver;
 
@@ -25,15 +26,31 @@ public class FormularioTeste {
         driver = new AndroidDriver(
                 new URL("http://127.0.0.1:4723"), caps
         );
+
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
     @Test
-    public void validarFormulario(){
-        WebElement el = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Formulário' and @class='android.widget.TextView']"));
-        el.click();
-    }
+    public void validarFormularioNome(){
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Formulário' and @class='android.widget.TextView']")).click();
 
+        WebElement campoNome = driver.findElement(AppiumBy.accessibilityId("nome"));
+        campoNome.sendKeys("Alicia");
+        String nome = campoNome.getText();
+
+        Assertions.assertEquals("Alicia", nome);
+
+    }
+    @Test
+    public void validarFormularioSelecao(){
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Formulário' and @class='android.widget.TextView']")).click();
+
+        driver.findElement(AppiumBy.accessibilityId("console")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.CheckedTextView[@text='Nintendo Switch']")).click();
+        String opcaoSelecionada = driver.findElement(AppiumBy.xpath("//android.widget.Spinner/android.widget.TextView")).getText();
+
+        Assertions.assertEquals("Nintendo Switch", opcaoSelecionada);
+    }
 
     @AfterEach
     public void fecharDriver(){
