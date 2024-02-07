@@ -52,6 +52,24 @@ public class FormularioTest {
         Assertions.assertEquals("Nintendo Switch", opcaoSelecionada);
     }
 
+    @Test
+    public void validarFormularioCheckboxSwitch(){
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Formulário' and @class='android.widget.TextView']")).click();
+
+        WebElement checkbox = driver.findElement(AppiumBy.className("android.widget.CheckBox"));
+        Assertions.assertEquals("false", checkbox.getAttribute("checked"));
+
+        WebElement elementoSwitch = driver.findElement(AppiumBy.accessibilityId("switch"));
+        Assertions.assertEquals("true", elementoSwitch.getAttribute("checked"));
+
+        checkbox.click();
+        elementoSwitch.click();
+
+        Assertions.assertEquals("true", checkbox.getAttribute("checked"));
+        Assertions.assertEquals("false", elementoSwitch.getAttribute("checked"));
+
+    }
+
     @AfterEach
     public void fecharDriver(){
         driver.quit();
