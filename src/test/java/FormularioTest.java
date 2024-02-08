@@ -69,6 +69,35 @@ public class FormularioTest {
         Assertions.assertEquals("false", elementoSwitch.getAttribute("checked"));
 
     }
+    @Test
+    public void validarTodosCampos(){
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Formulário' and @class='android.widget.TextView']")).click();
+
+        driver.findElement(AppiumBy.accessibilityId("nome")).sendKeys("Alicia");
+        driver.findElement(AppiumBy.accessibilityId("console")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.CheckedTextView[@text='Nintendo Switch']")).click();
+        driver.findElement(AppiumBy.className("android.widget.CheckBox")).click();
+        driver.findElement(AppiumBy.accessibilityId("switch")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"SALVAR\" and @class=\"android.widget.TextView\"]\n")).click();
+
+        WebElement nome  = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Nome: Alicia\" and @class=\"android.widget.TextView\"]"));
+        WebElement console = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Console: switch\" and @class=\"android.widget.TextView\"]\n"));
+        WebElement slider = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Slider: 25\" and @class=\"android.widget.TextView\"]"));
+        WebElement elementoSwitch = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Switch: Off\" and @class=\"android.widget.TextView\"]"));
+        WebElement checkbox = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Checkbox: Marcado\" and @class=\"android.widget.TextView\"]\n"));
+        WebElement data = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Data: 01/01/2000\" and @class=\"android.widget.TextView\"]\n"));
+        WebElement hora = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Hora: 12:00\" and @class=\"android.widget.TextView\"]\n"));
+
+
+        Assertions.assertEquals("Nome: Alicia", nome.getAttribute("text"));
+        Assertions.assertEquals("Console: switch", console.getAttribute("text"));
+        Assertions.assertEquals("Slider: 25", slider.getAttribute("text"));
+        Assertions.assertEquals("Switch: Off", elementoSwitch.getAttribute("text"));
+        Assertions.assertEquals("Checkbox: Marcado", checkbox.getAttribute("text"));
+        Assertions.assertEquals("Data: 01/01/2000", data.getAttribute("text"));
+        Assertions.assertEquals("Hora: 12:00", hora.getAttribute("text"));
+
+    }
 
     @AfterEach
     public void fecharDriver(){
