@@ -21,11 +21,24 @@ public class AlertaTest extends BasePage {
     @Test
     public void validarAlertaSimples(){
         alerta.clicarAlertaSimples();
-
-        Assertions.assertEquals("Info", alerta.obterTituloAlertaSimples());
+        Assertions.assertEquals("Info", alerta.obterTituloAlerta());
+        alerta.clicarBotaoOkAlerta();
     }
 
+    @Test
+    public void validarAlertaRestritivo(){
+        alerta.clicarAlertaRestritivo();
+        Assertions.assertEquals("Info", alerta.obterTituloAlerta());
+        alerta.clicarBotaoOkAlerta();
+    }
 
+    @Test
+    public void validarAlertaConfirme(){
+        alerta.clicarAlertaConfirm();
+        Assertions.assertEquals("Info", alerta.obterTituloAlerta());
+        alerta.clicarBotaoOkAlerta();
+        alerta.clicarBotaoOkAlerta();
+    }
 
 
 }

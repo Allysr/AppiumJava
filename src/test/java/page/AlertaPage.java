@@ -3,6 +3,7 @@ package page;
 import core.DriverFactory;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 
 public class AlertaPage {
     AndroidDriver driver = DriverFactory.getDriver();
@@ -13,15 +14,19 @@ public class AlertaPage {
     }
 
     public void clicarAlertaRestritivo(){
-        driver.findElement(AppiumBy.id("idButtonTest2")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.Button[@resource-id=\"idButtonTest2\"]\n")).click();
     }
 
     public void clicarAlertaConfirm(){
-        driver.findElement(AppiumBy.id("idButtonTest3")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.Button[@resource-id=\"idButtonTest3\"]\n")).click();
     }
 
-    public String obterTituloAlertaSimples(){
-        return driver.findElement(AppiumBy.xpath("//android.widget.Button[@resource-id=\"idButtonTest\"]\n")).getText();
+    public void clicarBotaoOkAlerta(){
+        driver.findElement(AppiumBy.id("android:id/button1")).click();
+    }
+
+    public String obterTituloAlerta(){
+        return driver.findElement(AppiumBy.id("android:id/alertTitle")).getText();
     }
 
 }
