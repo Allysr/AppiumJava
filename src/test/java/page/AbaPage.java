@@ -8,7 +8,7 @@ public class AbaPage {
     AndroidDriver driver = DriverFactory.getDriver();
 
     public String obterTextoAbaUm(){
-        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Este é o conteúdo da Aba 1\" and @class=\"android.widget.TextView\"]")).getText();
+        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Este é o conteúdo da Aba 1\"]")).getText();
     }
 
     public void clicarAbaDois(){
@@ -16,7 +16,7 @@ public class AbaPage {
     }
 
     public  String obterTextoAbaDois(){
-        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Este é o conteúdo da Aba 2\" and @class=\"android.widget.TextView\"]\n")).getText();
+        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Este é o conteúdo da Aba 2\"]")).getText();
     }
 
 }

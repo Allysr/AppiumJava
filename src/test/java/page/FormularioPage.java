@@ -46,7 +46,7 @@ public class FormularioPage {
     }
 
     public void clicarBotaoSalvar(){
-        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"SALVAR\" and @class=\"android.widget.TextView\"]\n")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"SALVAR\"]")).click();
     }
 
     public void clicarBotaoLimpar(){
@@ -54,31 +54,31 @@ public class FormularioPage {
     }
 
     public String obterResultadoNome(){
-        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Nome: Alicia\" and @class=\"android.widget.TextView\"]")).getAttribute("text");
+        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Nome: Alicia\"]")).getAttribute("text");
     }
 
     public String obterResultadoConsole(){
-        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Console: switch\" and @class=\"android.widget.TextView\"]\n")).getAttribute("text");
+        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Console: switch\"]")).getAttribute("text");
     }
 
     public String obterResultadoSlider(){
-        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Slider: 25\" and @class=\"android.widget.TextView\"]")).getAttribute("text");
+        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Slider: 25\"]")).getAttribute("text");
     }
 
     public String obterResultadoSwitch(){
-        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Switch: Off\" and @class=\"android.widget.TextView\"]")).getAttribute("text");
+        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Switch: Off\"]")).getAttribute("text");
     }
 
     public String obterResultadoCheckbox(){
-        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Checkbox: Marcado\" and @class=\"android.widget.TextView\"]\n")).getAttribute("text");
+        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Checkbox: Marcado\"]")).getAttribute("text");
     }
 
     public String obterResultadoData(){
-        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Data: 01/01/2000\" and @class=\"android.widget.TextView\"]\n")).getAttribute("text");
+        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Data: 01/01/2000\"]")).getAttribute("text");
     }
 
     public String obterResultadoHora(){
-        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Hora: 12:00\" and @class=\"android.widget.TextView\"]\n")).getAttribute("text");
+        return driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Hora: 12:00\"]")).getAttribute("text");
     }
 
 }
