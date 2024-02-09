@@ -3,6 +3,6 @@ Estudo de Appium com Selenium e Java
 </h1>
 
 <div align="center">
-<img width="300px" alt="Site para testes automatizados CuraHealthcare" src="https://i.imgur.com/36jngTh.png" />
+<img width="300px" alt="Site para testes automatizados CuraHealthcare" src="https://i.imgur.com/Tfz3xsS.png" />
 </div>
 <br>
