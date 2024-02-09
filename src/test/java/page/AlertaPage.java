@@ -3,7 +3,6 @@ package page;
 import core.DriverFactory;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.By;
 
 public class AlertaPage {
     AndroidDriver driver = DriverFactory.getDriver();

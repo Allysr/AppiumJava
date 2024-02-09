@@ -23,7 +23,6 @@ public class FormularioTest extends BasePage {
         formulario.digitarNome();
         Assertions.assertEquals("Alicia", formulario.obterNome());
     }
-
     @Test
     public void validarFormularioSelecao(){
         formulario.selecionarConsole();

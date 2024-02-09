@@ -15,4 +15,12 @@ public class MenuPage {
     public void acessarAlertas(){
         driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Alertas\" and @class=\"android.widget.TextView\"]")).click();
     }
+
+    public void acessarAbas(){
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Abas\" and @class=\"android.widget.TextView\"]\n")).click();
+    }
+
+    public  void acessarAccordion(){
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Accordion\" and @class=\"android.widget.TextView\"]\n")).click();
+    }
 }

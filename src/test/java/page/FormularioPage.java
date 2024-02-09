@@ -3,6 +3,7 @@ package page;
 import core.DriverFactory;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class FormularioPage {
@@ -46,6 +47,10 @@ public class FormularioPage {
 
     public void clicarBotaoSalvar(){
         driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"SALVAR\" and @class=\"android.widget.TextView\"]\n")).click();
+    }
+
+    public void clicarBotaoLimpar(){
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"LIMPAR\"]")).click();
     }
 
     public String obterResultadoNome(){
